@@ -16,8 +16,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100vw + 80px); /* aura의 크기 */
-    height: calc(100vw + 80px);
+    width: calc(100vw * 3.15);
+    height: calc(100vw * 3.15);
     border-radius: 15px;
     background: conic-gradient(
       from 0deg, 
@@ -85,7 +85,7 @@ body {
   .card {
     width: 220px; height: 310px;
     display: block;
-    background-image: url(/images/150mewtwo.webp);
+    background-image: url(/images/150mewtwo.jpg);
     background-size: contain;
   }
   .overlay {
