@@ -26,6 +26,7 @@ export default function Home({
   }
 }) {
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleMouseMove = useCallback(
     throttle((e: React.MouseEvent<HTMLDivElement>) => {
       const container = e.currentTarget as HTMLDivElement
@@ -48,6 +49,7 @@ export default function Home({
     []
   )
 
+  // eslint-enable-next-line react-hooks/exhaustive-deps
   const handleMouseOut = (e: React.MouseEvent<HTMLDivElement>) => {
     const container = e.currentTarget as HTMLDivElement
     const overlay = e.currentTarget?.querySelector('.overlay') as HTMLDivElement
