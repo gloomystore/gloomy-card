@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #000;
+}
+
+.aura {
+  position: relative;
+  z-index: 1; /* 그림자와 div가 겹치는 문제를 방지 */
+  padding: 40px;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%; /* aura의 크기 */
+    height: 300%;
+    border-radius: 15px;
+    background: conic-gradient(
+      from 0deg, 
+      rgba(255, 0, 0, 0.99), /* 빨강 */
+      rgba(255, 127, 0, 0.99), /* 주황 */
+      rgba(255, 255, 0, 0.99), /* 노랑 */
+      rgba(0, 255, 0, 0.99), /* 초록 */
+      rgba(0, 127, 255, 0.99), /* 파랑 */
+      rgba(75, 0, 130, 0.99), /* 남색 */
+      rgba(148, 0, 211, 0.99), /* 보라색 */
+      rgba(255, 0, 0, 0.99) /* 빨강 */
+    );
+    z-index: -2; /* div 위로 aura를 배치 */
+    animation: rotateAura 10s linear infinite;
+    filter: blur(5px); /* 은은한 효과를 위해 블러 추가 */
+    opacity: 0.8; /* 투명도 조절 */
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 1px);
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    box-sizing: border-box;
+
+    --r: 20px; /* border radius */
+    --g: black; /* gradient color */
+    background: 
+      /* Corners */
+      radial-gradient(farthest-side at bottom right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) top left / var(--r) var(--r),
+      radial-gradient(farthest-side at top right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) bottom left / var(--r) var(--r),
+      radial-gradient(farthest-side at bottom left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) top right / var(--r) var(--r),
+      radial-gradient(farthest-side at top left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) bottom right / var(--r) var(--r),
+      /* Borders */
+      linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) top / calc(100% - 2 * var(--r)) var(--r),
+      linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) bottom / calc(100% - 2 * var(--r)) var(--r),
+      linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) right / var(--r) calc(100% - 2 * var(--r)),
+      linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) left / var(--r) calc(100% - 2 * var(--r));
+  background-repeat: no-repeat;
+  background-color: transparent; /* make sure background is transparent */
+
+
+  }
+  .aura-content {
+    background: #000; /* div의 배경색 */
+    border: 5px solid #fff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+// 실제 카드 컨텐츠
+
+.container {
+  width: 220px; height: 310px;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+  position: relative;
+  .card {
+    width: 220px; height: 310px;
+    background: url(/images/150mewtwo.jpg);
+    background-size: contain;
+  }
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    width: 220px;
+    height: 310px;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 219, 112, 0.5) 45%,
+      rgba(132, 50, 255, 0.6) 55%,
+      transparent 54%
+    );
+    filter: brightness(1.1) opacity(0.8);
+    mix-blend-mode: color-dodge;
+    background-size: 150% 150%;
+    background-position: 100%;
+    transition: all 0.1s;
+  }
+}
+
+
+@keyframes rotateAura {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
