@@ -14,10 +14,10 @@ export async function getCards() {
     currentContents: 5,
     data: [
       { src: '/images/150mewtwo.webp' },
+      { src: '/images/raichu.webp' },
+      { src: '/images/charizard.webp' },
       { src: '/images/150mewtwo.webp' },
-      { src: '/images/150mewtwo.webp' },
-      { src: '/images/150mewtwo.webp' },
-      { src: '/images/150mewtwo.webp' },
+      { src: '/images/charizard.webp' },
     ]
   }
 }
