@@ -32,7 +32,7 @@ body {
       rgba(255, 0, 0, 0.99) /* 빨강 */
     );
     z-index: -2; /* div 위로 aura를 배치 */
-    animation: rotateAura 5s linear infinite;
+    animation: rotateAura 3s linear infinite;
     filter: blur(20px); /* 은은한 효과를 위해 블러 추가 */
     opacity: 0.95; /* 투명도 조절 */
   }
@@ -60,10 +60,8 @@ body {
       linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) bottom / calc(100% - 2 * var(--r)) var(--r),
       linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) right / var(--r) calc(100% - 2 * var(--r)),
       linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) left / var(--r) calc(100% - 2 * var(--r));
-  background-repeat: no-repeat;
-  background-color: transparent; /* make sure background is transparent */
-
-
+    background-repeat: no-repeat;
+    background-color: transparent; /* make sure background is transparent */
   }
   .aura-content {
     background: #000; /* div의 배경색 */
