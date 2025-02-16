@@ -82,7 +82,7 @@ body {
 .container {
   width: 220px; height: 310px;
   margin-bottom: 20px;
-  transition: all 0.2s;
+  transition: all 0.15s;
   position: relative;
   .card {
     width: 220px; height: 310px;
@@ -106,7 +106,7 @@ body {
     mix-blend-mode: color-dodge;
     background-size: 150% 150%;
     background-position: 100%;
-    transition: all 0.1s;
+    transition: all 0.2s;
   }
 }
 

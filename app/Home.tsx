@@ -45,7 +45,7 @@ export default function Home({
       const rotateX = 4 / 30 * y - 20
       const rotateY = -1 / 5 * x + 20
       container.style.transform = `perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-    }, 50), // 50ms throttle
+    }, 10), // 50ms throttle
     []
   )
 
